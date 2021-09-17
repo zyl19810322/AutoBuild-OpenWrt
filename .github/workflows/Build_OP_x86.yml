@@ -11,9 +11,9 @@ on:
   release:
     types: [published]
 
-  push:
-    branches: 
-      - master
+  #push:
+    #branches: 
+      #- master
 
   #schedule:
   #  - cron: 0 8 * * 5
@@ -86,7 +86,7 @@ jobs:
 
     - name: Configuration Customization - Build_x86
       env:
-        CONFIG_FILE: 'zyl.config'
+        CONFIG_FILE: 'x86.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
